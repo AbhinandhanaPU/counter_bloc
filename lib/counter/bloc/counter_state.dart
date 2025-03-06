@@ -1,15 +1,19 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 part of 'counter_bloc.dart';
 
 @immutable
-abstract class CounterState {
-  int get count;
-}
+abstract class CounterState {}
 
 class CounterInitialState extends CounterState {
-  final int _count;
+  final int count;
 
-  CounterInitialState(this._count);
+  CounterInitialState(this.count);
+}
 
-  @override
-  int get count => _count;
+class CounterLoadingState extends CounterState {}
+
+class CounterErrorState extends CounterState {
+  final String message;
+
+  CounterErrorState(this.message);
 }
