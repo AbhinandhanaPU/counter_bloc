@@ -16,11 +16,12 @@ class CounterPage extends StatelessWidget {
       body: Center(
         child: BlocBuilder<CounterBloc, CounterState>(
           builder: (context, state) {
+            final countState = state as CounterInitialState;
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  state.count.toString(),
+                  countState.count.toString(),
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
               ],
