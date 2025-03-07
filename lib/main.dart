@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       home: MultiBlocProvider(
         providers: [
           BlocProvider(
-            create: (context) => CounterBloc(),
+            create: (context) => CounterBloc()..add(CounterInitialEvent()),
           ),
         ],
         child: const CounterPage(),
